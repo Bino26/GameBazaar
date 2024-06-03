@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBazaar.Client", "GameBazaar.Client\GameBazaar.Client.csproj", "{C5C19FB9-8CE9-4A1D-B08B-353D38815629}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C5C19FB9-8CE9-4A1D-B08B-353D38815629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5C19FB9-8CE9-4A1D-B08B-353D38815629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5C19FB9-8CE9-4A1D-B08B-353D38815629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
