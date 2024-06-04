@@ -1,64 +1,43 @@
 ﻿@page "/"
+@using GameBazaar.Client.Clients
 @using SharedLibrary.Models
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+@if(games is null)
+{
+   <p><em>Loading...</em></p> 
+}
 
-Welcome to your new app.
+else
+{
+    <table class="table table-striped table-bordered table-hover mt-3">
+        <thead class="table-dark">
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Price</th>
+        <th scope="col">Release Date</th>
+        </thead>
+        <tbody>
+            @foreach (var game in games)
+            {
+                <tr>
+                    <td>@game.Id</td>
+                    <td>@game.Name</td>
+                    <td>@game.Genre</td>
+                    <td class="text-end">@game.Price</td>
+                    <td>@game.ReleaseDate.ToString("MM/dd/yyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+}
 
-<table class="table table-striped table-bordered table-hover">
-    <thead class="table-dark">
-    <th scope="col">Id</th>
-    <th scope="col">Name</th>
-    <th scope="col">Genre</th>
-    <th scope="col">Price</th>
-    <th scope="col">Release Date</th>
-    </thead>
-    <tbody>
-        @foreach (var game in games)
-        {
-            <tr>
-                <td>@game.Id</td>
-                <td>@game.Name</td>
-                <td>@game.Genre</td>
-                <td>@game.Price</td>
-                <td>@game.ReleaseDate.ToString("MM/dd/yyy")</td>
-            </tr>
-        }
-    </tbody>
-</table>
+
 
 @code {
-    private Game[] games = new[]
-            {
-        new Game()
-        {
-            Id = 1 ,
-            Name = "Street Fighter II",
-            Genre ="Fighting",
-            Price = 19.99M,
-            ReleaseDate = new DateTime(1999,2,1)
-
-        },
-         new Game()
-        {
-            Id = 2 ,
-            Name = "Final Fantasy XIV",
-            Genre ="Roleplaying",
-            Price = 59.99M,
-            ReleaseDate = new DateTime(2010,9,30)
-
-
-        },
-        new Game()
-        {
-            Id = 3 ,
-            Name = "FIFA 23 ",
-            Genre ="Sports",
-            Price = 69.99M,
-            ReleaseDate = new DateTime(2022,9,27)
-
-        },
-    };
+    private GamesClient client = new();
+    private Game[]? games;
 }
