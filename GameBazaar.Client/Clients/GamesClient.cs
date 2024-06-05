@@ -35,7 +35,22 @@ namespace GameBazaar.Client.Clients
 
         },
     };
+        private readonly Genre[] genres = new GenresClient().GetGenres();
 
         public Game[] GetGames() => [.. games];
+
+        public void AddGame(GameDetails game)
+        {
+
+            ArgumentException.ThrowIfNullOrWhiteSpace(game.GenreId);
+            var genre = genres.Single(genre => genre.Id == int.Parse(game.GenreId));
+            var gameSummary = new Game
+            {
+                Id = games.Count + 1,
+                Name = game.Name,
+                Genre = game.GenreId,
+
+            };
+        }
     }
 }

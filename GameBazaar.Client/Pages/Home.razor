@@ -4,9 +4,9 @@
 
 <PageTitle>Home</PageTitle>
 
-@if(games is null)
+@if (games is null)
 {
-   <p><em>Loading...</em></p> 
+    <p><em>Loading...</em></p>
 }
 
 else
@@ -32,12 +32,18 @@ else
             }
         </tbody>
     </table>
-    
+
 }
 
 
 
 @code {
     private GamesClient client = new();
+
     private Game[]? games;
+
+    protected override void OnInitialized()
+    {
+        games = client.GetGames();
+    }
 }
