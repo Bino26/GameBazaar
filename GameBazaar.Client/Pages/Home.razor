@@ -1,8 +1,12 @@
 ﻿@page "/"
-@using GameBazaar.Client.Clients
-@using SharedLibrary.Models
+@inject GamesClient Client
+
 
 <PageTitle>Home</PageTitle>
+
+<div class="mt-2">
+    <a class="btn btn-primary" role="button" href="/editgame">New Game</a>
+</div>
 
 @if (games is null)
 {
@@ -38,12 +42,12 @@ else
 
 
 @code {
-    private GamesClient client = new();
+   
 
     private Game[]? games;
 
     protected override void OnInitialized()
     {
-        games = client.GetGames();
+        games = Client.GetGames();
     }
 }

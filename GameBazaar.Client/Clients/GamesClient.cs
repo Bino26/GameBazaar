@@ -48,9 +48,13 @@ namespace GameBazaar.Client.Clients
             {
                 Id = games.Count + 1,
                 Name = game.Name,
-                Genre = game.GenreId,
+                Genre = genre.Name,
+                Price = game.Price,
+                ReleaseDate = game.ReleaseDate,
 
             };
+
+            games.Add(gameSummary);
         }
     }
 }
