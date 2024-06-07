@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBazaar.Client", "GameBazaar.Client\GameBazaar.Client.csproj", "{C5C19FB9-8CE9-4A1D-B08B-353D38815629}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBazaar.Client", "GameBazaar.Client\GameBazaar.Client.csproj", "{C5C19FB9-8CE9-4A1D-B08B-353D38815629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{11AF4A8E-E5B4-4ABD-A634-25AD607C570D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

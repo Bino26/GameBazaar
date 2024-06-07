@@ -22,6 +22,7 @@ else
         <th scope="col">Genre</th>
         <th scope="col">Price</th>
         <th scope="col">Release Date</th>
+        <th></th>
         </thead>
         <tbody>
             @foreach (var game in games)
@@ -32,6 +33,13 @@ else
                     <td>@game.Genre</td>
                     <td class="text-end">@game.Price</td>
                     <td>@game.ReleaseDate.ToString("MM/dd/yyy")</td>
+                    <td>
+                        <div>
+                            <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.Id)">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -42,7 +50,7 @@ else
 
 
 @code {
-   
+
 
     private Game[]? games;
 
@@ -50,4 +58,5 @@ else
     {
         games = Client.GetGames();
     }
+    private static string GameUrl(int id) => $"/editgame/{id}";
 }
