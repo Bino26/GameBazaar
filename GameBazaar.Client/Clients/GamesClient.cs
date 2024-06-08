@@ -86,6 +86,12 @@ namespace GameBazaar.Client.Clients
             existingGame.ReleaseDate = updateGame.ReleaseDate;
         }
 
+        public void DeleteGame(int id)
+        {
+            var game = GetGameSummaryById(id);
+            games.Remove(game);
+        }
+
         private Game GetGameSummaryById(int id)
         {
             Game? game = games.Find(game => game.Id == id);

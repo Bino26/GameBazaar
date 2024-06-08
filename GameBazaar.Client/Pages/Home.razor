@@ -34,11 +34,17 @@ else
                     <td class="text-end">@game.Price</td>
                     <td>@game.ReleaseDate.ToString("MM/dd/yyy")</td>
                     <td>
-                        <div>
+                        <div class="d-flex">
                             <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.Id)">
                                 <i class="bi bi-pencil-fill"></i>
                             </a>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@GetDeleteModalId(game)">
+                                <i class="bi bi-x-lg"></i>
+
+                            </button>
                         </div>
+                        <DeleteGame Game="@game" />
+
                     </td>
                 </tr>
             }
@@ -51,7 +57,6 @@ else
 
 @code {
 
-
     private Game[]? games;
 
     protected override void OnInitialized()
@@ -59,4 +64,9 @@ else
         games = Client.GetGames();
     }
     private static string GameUrl(int id) => $"/editgame/{id}";
+
+    private string GetDeleteModalId(Game game)
+    {
+        return $"#{DeleteGame.GetModalId(game)}";
+    }
 }
